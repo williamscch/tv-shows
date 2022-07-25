@@ -4,32 +4,32 @@
   font-family: "Roboto Condensed", sans-serif;
   box-sizing: border-box;
   padding: 0;
-  margin: 0;list-style: none;
-
+  margin: 0;
+  list-style: none;
 }
 
 nav {
-    display: flex;
+  display: flex;
 }
 
 .logo {
-width: 20%;
-display: flex;
-justify-content:center ;
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-nav {
-    width: 25%;
+  width: 25%;
 }
 
 .nav-links {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-links li:hover {
-    text-decoration: underline;
-    cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
