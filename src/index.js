@@ -1,3 +1,10 @@
-import './style.css';
+import "./style.css";
 
-alert('Hello');
+const getShows = async () => {
+  const response = await fetch("https://api.tvmaze.com/shows");
+  const JsonResponse = await response.json();
+  console.log(JsonResponse[1].name);
+  console.log(JsonResponse[1].summary);
+};
+
+getShows();
