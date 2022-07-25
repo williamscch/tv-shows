@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\nconst getShows = async () => {\r\n  const response = await fetch(\"https://api.tvmaze.com/shows\");\r\n  const JsonResponse = await response.json();\r\n  console.log(JsonResponse);\r\n};\r\n\r\ngetShows();\r\n\n\n//# sourceURL=webpack://capstone-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst getShows = async () => {\n  const response = await fetch(\"https://api.tvmaze.com/shows\");\n  const JsonResponse = await response.json();\n  document.append(JsonResponse[1].name);\n  document.append(JsonResponse[1].summary);\n};\n\ngetShows();\n\n\n//# sourceURL=webpack://capstone-project/./src/index.js?");
 
 /***/ })
 

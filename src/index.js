@@ -1,10 +1,11 @@
-import "./style.css";
+import './style.css';
 
 const getShows = async () => {
-  const response = await fetch("https://api.tvmaze.com/shows");
+  const response = await fetch('https://api.tvmaze.com/shows');
   const JsonResponse = await response.json();
-  console.log(JsonResponse[1].name);
-  console.log(JsonResponse[1].summary);
+  const body = document.querySelector('body');
+  body.innerText = JsonResponse[1].name;
+  body.append(JsonResponse[1].summary);
 };
 
 getShows();
