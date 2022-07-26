@@ -1,11 +1,11 @@
-// eslint-disable-next-line import/no-cycle
-import { getShows, list } from "../index.js";
-import thumbsUp from "../../images/thumbsup.svg";
-import commentImg from "../../images/comment.svg";
-import displayModal from "../displayModal.js";
+import getShows from "./getShows.js";
+import thumbsUp from "../images/thumbsup.svg";
+import commentImg from "../images/comment.svg";
+import displayModal from "./displayModal.js";
 
 const displayScreen = async () => {
   const mostRatedShows = await getShows();
+  const list = document.querySelector(".shows");
   mostRatedShows.forEach((show) => {
     const showCard = document.createElement("article");
     const img = document.createElement("img");
