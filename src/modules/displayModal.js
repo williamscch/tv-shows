@@ -1,6 +1,9 @@
 import iconx from '../images/closeicon.svg';
 import getSingleShow from './getSingleShow.js';
+<<<<<<< HEAD
 import getComments from './getComments.js';
+=======
+>>>>>>> origin/add-likes
 
 const displayModal = async (id) => {
   const modal = id;
