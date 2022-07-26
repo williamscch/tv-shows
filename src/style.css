@@ -34,8 +34,14 @@ nav {
   cursor: pointer;
 }
 
+.shows {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
 footer {
-  position: absolute;
   padding: 2rem;
   bottom: 0;
   border-top: 1px solid black;
