@@ -12,6 +12,10 @@ nav {
   display: flex;
 }
 
+a {
+  cursor: pointer;
+}
+
 .logo {
   width: 20%;
   display: flex;
@@ -20,6 +24,14 @@ nav {
 
 .logo-nav {
   width: 25%;
+}
+
+.comments {
+  padding: 0 1rem;
+}
+
+.comments li {
+  padding: 1rem 0;
 }
 
 .nav-links {
@@ -65,6 +77,8 @@ footer {
   display: flex;
   flex-direction: column;
   width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .iconx-modal {
@@ -75,7 +89,7 @@ footer {
 }
 
 .show-image {
-  width: 300px;
+  width: 250px;
   align-self: center;
 }
 
@@ -90,4 +104,9 @@ h2 {
 
 .description {
   padding: 0 1rem;
+}
+
+h3 {
+  align-self: center;
+  padding: 1rem;
 }
