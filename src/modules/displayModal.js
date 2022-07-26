@@ -4,8 +4,9 @@ import getComments from './getComments.js';
 
 const displayModal = async (id) => {
   const modal = id;
-  const { name, language, status, premiered, ended, rating, image, summary } =
-    await getSingleShow(modal);
+  const {
+    name, language, status, premiered, ended, rating, image, summary,
+  } = await getSingleShow(modal);
 
   const body = document.querySelector('body');
 
