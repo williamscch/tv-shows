@@ -2,10 +2,7 @@ import getShows from './getShows.js';
 import thumbsUp from '../images/thumbsup.svg';
 import commentImg from '../images/comment.svg';
 import displayModal from './displayModal.js';
-<<<<<<< HEAD
-=======
 import addNewLike from './involvementAPI.js';
->>>>>>> origin/add-likes
 
 const displayScreen = async () => {
   const mostRatedShows = await getShows();
