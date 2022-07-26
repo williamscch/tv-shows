@@ -41,3 +41,47 @@ footer {
   border-top: 1px solid black;
   width: 100%;
 }
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(193, 199, 208, 0.8);
+}
+
+.popup {
+  background-color: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.iconx-modal {
+  height: 30px;
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.show-image {
+  width: 300px;
+  align-self: center;
+}
+
+h2 {
+  padding: 1rem;
+}
+
+.details {
+  padding: 1rem 1rem;
+  columns: 2;
+}
+
+.description {
+  padding: 0 1rem;
+}
