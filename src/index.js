@@ -1,5 +1,6 @@
 import './style.css';
 import tvLogo from '../images/tvlogo.png';
+import displayModal from './displayModal.js';
 
 const getShows = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
@@ -16,3 +17,7 @@ const imageLogo = document.createElement('img');
 imageLogo.classList.add('logo-nav');
 imageLogo.src = tvLogo;
 navLogoContainer.appendChild(imageLogo);
+
+// Boton de prueba
+const btn = document.querySelector('.btn1');
+btn.addEventListener('click', displayModal);
