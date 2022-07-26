@@ -20,9 +20,6 @@ imageLogo.classList.add("logo-nav");
 imageLogo.src = tvLogo;
 navLogoContainer.appendChild(imageLogo);
 
-// Boton de prueba
-const btn = document.querySelector(".btn1");
-btn.addEventListener("click", displayModal);
 displayScreen();
 
 export { getShows, list };
