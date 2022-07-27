@@ -13,27 +13,31 @@ const displayScreen = async () => {
     const showCard = document.createElement('article');
     const img = document.createElement('img');
     img.src = show.image.medium;
+    const titleAndLikes = document.createElement('div');
+    titleAndLikes.className = 'title-likes';
     const name = document.createElement('h3');
     name.textContent = show.name;
     const likeBox = document.createElement('div');
+    likeBox.className = 'like-box';
     const likeNum = document.createElement('span');
     likeNum.textContent = likesAr.find((e) => e.item_id === show.id).likes;
     const like = document.createElement('img');
     like.src = thumbsUp;
     const commentBox = document.createElement('a');
-    const comment = document.createElement('img');
-    comment.src = commentImg;
+    commentBox.innerHTML = 'Comments';
+    // const comment = document.createElement('img');
+    // comment.src = commentImg;
     commentBox.addEventListener('click', () => {
       displayModal(show.id);
     });
+    titleAndLikes.append(name, likeBox);
     likeBox.append(likeNum, like);
-    commentBox.appendChild(comment);
-    showCard.append(img, name, likeBox, commentBox);
+    // commentBox.appendChild(comment);
+    showCard.append(img, titleAndLikes, commentBox);
     list.append(showCard);
 
     like.addEventListener('click', () => {
       addNewLike(show.id);
-      // eslint-disable-next-line no-plusplus
       likeNum.textContent++;
     });
   });
