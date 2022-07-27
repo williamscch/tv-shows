@@ -98,6 +98,13 @@ const displayModal = async (id) => {
   button.innerHTML = 'Submit';
   button.addEventListener('click', () => {
     addComment(id, inputName.value, inputInsight.value);
+    const date = new Date();
+    const formatDate = `${date.getFullYear()}-${
+      date.getMonth() + 1
+    }-${date.getDate()}`;
+    const li = document.createElement('li');
+    li.innerText = `${formatDate} ${inputName.value}: ${inputInsight.value}`;
+    commentsList.appendChild(li);
     inputName.value = '';
     inputInsight.value = '';
   });
