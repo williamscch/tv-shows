@@ -1,6 +1,5 @@
 import getShows from './getShows.js';
 import thumbsUp from '../images/thumbsup.svg';
-import commentImg from '../images/comment.svg';
 import displayModal from './displayModal.js';
 import { getNumberOfLikes, addNewLike } from './likes.js';
 import showNumbers from './showNumber.js';
@@ -25,20 +24,20 @@ const displayScreen = async () => {
     like.src = thumbsUp;
     const commentBox = document.createElement('a');
     commentBox.innerHTML = 'Comments';
-    // const comment = document.createElement('img');
-    // comment.src = commentImg;
     commentBox.addEventListener('click', () => {
       displayModal(show.id);
     });
     titleAndLikes.append(name, likeBox);
     likeBox.append(likeNum, like);
-    // commentBox.appendChild(comment);
     showCard.append(img, titleAndLikes, commentBox);
     list.append(showCard);
 
     like.addEventListener('click', () => {
       addNewLike(show.id);
-      likeNum.textContent++;
+      let numberLikes = likeNum.textContent;
+      numberLikes = parseInt(numberLikes, 10);
+      numberLikes += 1;
+      likeNum.textContent = numberLikes;
     });
   });
   const numberHTML = document.querySelector('.shows-number');

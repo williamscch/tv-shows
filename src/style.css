@@ -38,6 +38,7 @@ a {
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding: 1rem;
 }
 
 .comments {
@@ -61,10 +62,6 @@ a {
   cursor: pointer;
 }
 
-.title {
-  padding: 1rem;
-}
-
 .shows {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -78,6 +75,15 @@ a {
   justify-content: space-between;
 }
 
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+article > img {
+  margin-bottom: 0.5rem;
+}
+
 .like-box {
   display: flex;
   align-items: center;
@@ -88,15 +94,6 @@ a {
   filter: invert();
   height: 20px;
   cursor: pointer;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-}
-
-article > img {
-  margin-bottom: 0.5rem;
 }
 
 article a {
