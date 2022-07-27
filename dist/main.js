@@ -206,7 +206,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst showNumbers = () => {\n  const numberHTML = document.querySelector('.shows-number');\n  const showsNum = document.querySelectorAll('article');\n  return showsNum.length;\n  numberHTML.textContent = showsNum.length;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showNumbers);\n\n//# sourceURL=webpack://capstone-project/./src/modules/showNumber.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst showNumbers = () => {\n  const showsNum = document.querySelectorAll('article');\n  return showsNum.length;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showNumbers);\n\n//# sourceURL=webpack://capstone-project/./src/modules/showNumber.js?");
 
 /***/ }),
 
