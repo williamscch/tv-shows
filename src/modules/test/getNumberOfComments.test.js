@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import getNumberOfComments from '../modules/getNumberOfComments.js';
+import getNumberOfComments from '../getNumberOfComments.js';
 
 describe('getNumberOfComments tests', () => {
   test('Should count all li elements to be 3', () => {
