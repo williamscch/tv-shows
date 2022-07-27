@@ -5,10 +5,10 @@ import displayModal from './displayModal.js';
 import { getNumberOfLikes, addNewLike } from './likes.js';
 
 const displayScreen = async () => {
-  const mostRatedShows = await getShows();
+  const showsArray = await getShows();
   const likesAr = await getNumberOfLikes();
   const list = document.querySelector('.shows');
-  mostRatedShows.forEach((show) => {
+  showsArray.forEach((show) => {
     const showCard = document.createElement('article');
     const img = document.createElement('img');
     img.src = show.image.medium;
