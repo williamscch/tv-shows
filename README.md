@@ -1,56 +1,40 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# TV Shows Web App
 
-> Description the project.
+> In this project we build a web application based on an external API which contains information about TV shows. Also this web app let you like the shows that you like the most and comment what you think about them making use of an involvement API to save this interaction information.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML and CSS
+- Webpack and Npm
+- JavaScript: ES6, Modular, Async.
+- API fetch.
+- Tested with Jest.
 
-## Live Demo (if available)
+## TV Shows Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Press here to see the TV Shows Live Demo](https://wdavidcch.github.io/capstone-project/dist/)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running copy the SSH key of the repository and make a 'git clone' inn your terminal, then run an npm install so you will have all the dependencies required. After that you will be able to deploy this project locally.
 
+## 👤 Authors
 
-To get a local copy up and running follow these simple example steps.
+👤 **Williams Colmenares**
 
-### Prerequisites
+- GitHub: [@wdavidcch](https://github.com/wdavidcch)
+- Twitter: [@wdavidcch](https://twitter.com/wdavidcch)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/williams-colmenares-989a6b151)
 
-### Setup
+👤 **Diego Yon**
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@diegoyon](https://github.com/diegoyon)
+- Twitter: [@diegoyon](https://twitter.com/diegoyon)
+- LinkedIn: [Diego Yon](https://www.linkedin.com/in/diego-yon-9311aa41/)
 
 ## 🤝 Contributing
 
@@ -64,9 +48,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse Module 2 JavaScript.
+- Base API for the TV Shows [TVMazeAPI](https://www.tvmaze.com/api)
+- Involvement API [Link](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 
 ## 📝 License
 
