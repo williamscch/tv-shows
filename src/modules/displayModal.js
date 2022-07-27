@@ -1,11 +1,13 @@
 import iconx from '../images/closeicon.svg';
 import getSingleShow from './getSingleShow.js';
 import getComments from './getComments.js';
+import addComment from './addComment.js';
 
 const displayModal = async (id) => {
   const modal = id;
-  const { name, language, status, premiered, ended, rating, image, summary } =
-    await getSingleShow(modal);
+  const {
+    name, language, status, premiered, ended, rating, image, summary,
+  } = await getSingleShow(modal);
 
   const body = document.querySelector('body');
 
@@ -64,12 +66,49 @@ const displayModal = async (id) => {
 
   const commentsList = document.createElement('ul');
   commentsList.className = 'comments';
+
   for (let i = 0; i < comments.length; i += 1) {
     const li = document.createElement('li');
     li.innerText = `${comments[i].creation_date} ${comments[i].username}: ${comments[i].comment}`;
     commentsList.appendChild(li);
   }
+
   popup.appendChild(commentsList);
+
+  const form = document.createElement('div');
+  form.className = 'form';
+  popup.append(form);
+
+  const addCommentTitle = document.createElement('h3');
+  addCommentTitle.innerHTML = 'Add a comment';
+  form.appendChild(addCommentTitle);
+
+  const inputName = document.createElement('input');
+  inputName.className = 'input-name';
+  inputName.placeholder = 'Your name';
+  form.appendChild(inputName);
+
+  const inputInsight = document.createElement('textarea');
+  inputInsight.className = 'input-insight';
+  inputInsight.rows = '5';
+  inputInsight.placeholder = 'Your insights';
+  form.appendChild(inputInsight);
+
+  const button = document.createElement('button');
+  button.innerHTML = 'Submit';
+  button.addEventListener('click', () => {
+    addComment(id, inputName.value, inputInsight.value);
+    const date = new Date();
+    const formatDate = `${date.getFullYear()}-${
+      date.getMonth() + 1
+    }-${date.getDate()}`;
+    const li = document.createElement('li');
+    li.innerText = `${formatDate} ${inputName.value}: ${inputInsight.value}`;
+    commentsList.appendChild(li);
+    inputName.value = '';
+    inputInsight.value = '';
+  });
+  form.appendChild(button);
 };
 
 export default displayModal;
