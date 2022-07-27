@@ -8,8 +8,18 @@
   list-style: none;
 }
 
+body {
+  background-color: #1b252f;
+  color: white;
+}
+
 nav {
   display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px 0 black;
+  margin-bottom: 2rem;
 }
 
 a {
@@ -17,19 +27,18 @@ a {
 }
 
 .logo {
-  width: 20%;
   display: flex;
-  justify-content: center;
 }
 
 .logo-nav {
-  width: 25%;
+  height: 50px;
 }
 
 .title {
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding: 1rem;
 }
 
 .comments {
@@ -41,10 +50,11 @@ a {
 }
 
 .nav-links {
-  width: 40%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
+  font-size: 1.5rem;
 }
 
 .nav-links li:hover {
@@ -54,15 +64,50 @@ a {
 
 .shows {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-template-rows: auto;
   justify-items: center;
+}
+
+.title-likes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+article > img {
+  margin-bottom: 0.5rem;
+}
+
+.like-box {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.like-box img {
+  filter: invert();
+  height: 20px;
+  cursor: pointer;
+}
+
+article a {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-bottom: 2rem;
 }
 
 footer {
   padding: 2rem;
   bottom: 0;
-  border-top: 1px solid black;
+  box-shadow: 0 0 5px 0 black;
   width: 100%;
 }
 
@@ -72,6 +117,7 @@ footer {
   width: 100vw;
   height: 100vh;
   background-color: rgba(193, 199, 208, 0.8);
+  color: black;
 }
 
 .popup {
