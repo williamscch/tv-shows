@@ -2,12 +2,11 @@
  * @jest-environment jsdom
  */
 
-import getNumberOfComments from '../modules/getNumberOfComments';
+import getNumberOfComments from '../modules/getNumberOfComments.js';
 
 describe('getNumberOfComments tests', () => {
   test('Should count all li elements to be 3', () => {
-    document.body.innerHTML =
-      '<ul class="comments"><li></li><li></li><li></li></ul>';
+    document.body.innerHTML = '<ul class="comments"><li></li><li></li><li></li></ul>';
     const number = getNumberOfComments();
     expect(number).toBe(3);
   });
@@ -19,10 +18,8 @@ describe('getNumberOfComments tests', () => {
   });
 
   test('Should count all li elements to be 9', () => {
-    document.body.innerHTML =
-      '<ul class="comments"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>';
+    document.body.innerHTML = '<ul class="comments"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>';
     const number = getNumberOfComments();
     expect(number).toBe(9);
   });
 });
-
