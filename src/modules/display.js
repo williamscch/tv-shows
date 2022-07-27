@@ -3,6 +3,7 @@ import thumbsUp from '../images/thumbsup.svg';
 import commentImg from '../images/comment.svg';
 import displayModal from './displayModal.js';
 import { getNumberOfLikes, addNewLike } from './likes.js';
+import showNumbers from './showNumber.js';
 
 const displayScreen = async () => {
   const showsArray = await getShows();
@@ -36,6 +37,7 @@ const displayScreen = async () => {
       likeNum.textContent++;
     });
   });
+  showNumbers();
 };
 
 export default displayScreen;

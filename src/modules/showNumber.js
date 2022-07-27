@@ -1,13 +1,7 @@
-import getShows from './getShows.js';
-
-const showNumbers = async () => {
+const showNumbers = () => {
   const numberHTML = document.querySelector('.shows-number');
-  const mostRatedShows = await getShows();
-  let counter = 0;
-  mostRatedShows.forEach(() => {
-    counter += 1;
-  });
-  numberHTML.textContent = counter;
+  const showsNum = document.querySelectorAll('article');
+  numberHTML.textContent = showsNum.length;
 };
 
 export default showNumbers;
