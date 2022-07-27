@@ -37,7 +37,9 @@ const displayScreen = async () => {
       likeNum.textContent++;
     });
   });
-  showNumbers();
+  const numberHTML = document.querySelector('.shows-number');
+  const showsNum = showNumbers();
+  numberHTML.textContent = showsNum;
 };
 
 export default displayScreen;
