@@ -6,9 +6,8 @@ import getNumberOfComments from './getNumberOfComments.js';
 
 const displayModal = async (id) => {
   const modal = id;
-  const {
-    name, language, status, premiered, ended, rating, image, summary,
-  } = await getSingleShow(modal);
+  const { name, language, status, premiered, ended, rating, image, summary } =
+    await getSingleShow(modal);
 
   const body = document.querySelector('body');
 
@@ -75,10 +74,17 @@ const displayModal = async (id) => {
   const commentsList = document.createElement('ul');
   commentsList.className = 'comments';
 
-  for (let i = 0; i < comments.length; i += 1) {
-    const li = document.createElement('li');
-    li.innerText = `${comments[i].creation_date} ${comments[i].username}: ${comments[i].comment}`;
-    commentsList.appendChild(li);
+  if (comments === 'No comments') {
+    const paragraph = document.createElement('p');
+    paragraph.innerText = 'No comments';
+    paragraph.className = 'no-comments';
+    commentsList.appendChild(paragraph);
+  } else {
+    for (let i = 0; i < comments.length; i += 1) {
+      const li = document.createElement('li');
+      li.innerText = `${comments[i].creation_date} ${comments[i].username}: ${comments[i].comment}`;
+      commentsList.appendChild(li);
+    }
   }
 
   popup.appendChild(commentsList);
@@ -109,6 +115,12 @@ const displayModal = async (id) => {
   button.innerHTML = 'Submit';
   button.addEventListener('click', () => {
     addComment(id, inputName.value, inputInsight.value);
+
+    const paragraph = document.querySelector('.no-comments');
+    if (paragraph !== null) {
+      paragraph.remove();
+    }
+
     const date = new Date();
     const formatDate = `${date.getFullYear()}-${(
       date.getMonth() + 1
@@ -127,3 +139,4 @@ const displayModal = async (id) => {
 };
 
 export default displayModal;
+
