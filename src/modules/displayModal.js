@@ -2,12 +2,12 @@ import iconx from '../images/closeicon.svg';
 import getSingleShow from './getSingleShow.js';
 import getComments from './getComments.js';
 import addComment from './addComment.js';
+import getNumberOfComments from './getNumberOfComments.js';
 
 const displayModal = async (id) => {
   const modal = id;
-  const {
-    name, language, status, premiered, ended, rating, image, summary,
-  } = await getSingleShow(modal);
+  const { name, language, status, premiered, ended, rating, image, summary } =
+    await getSingleShow(modal);
 
   const body = document.querySelector('body');
 
@@ -60,9 +60,16 @@ const displayModal = async (id) => {
 
   const comments = await getComments(id);
 
+  const divTitle = document.createElement('div');
+  divTitle.className = 'comment-title';
+  popup.append(divTitle);
+
   const commentsTitle = document.createElement('h3');
   commentsTitle.innerHTML = 'Comments';
-  popup.appendChild(commentsTitle);
+  divTitle.appendChild(commentsTitle);
+
+  const commentNumber = document.createElement('h3');
+  divTitle.appendChild(commentNumber);
 
   const commentsList = document.createElement('ul');
   commentsList.className = 'comments';
@@ -74,6 +81,9 @@ const displayModal = async (id) => {
   }
 
   popup.appendChild(commentsList);
+
+  let number = getNumberOfComments();
+  commentNumber.innerHTML = `(${number})`;
 
   const form = document.createElement('div');
   form.className = 'form';
@@ -99,14 +109,18 @@ const displayModal = async (id) => {
   button.addEventListener('click', () => {
     addComment(id, inputName.value, inputInsight.value);
     const date = new Date();
-    const formatDate = `${date.getFullYear()}-${
+    const formatDate = `${date.getFullYear()}-${(
       date.getMonth() + 1
-    }-${date.getDate()}`;
+    ).toLocaleString('en-US', { minimumIntegerDigits: 2 })}-${date
+      .getDate()
+      .toLocaleString('en-US', { minimumIntegerDigits: 2 })}`;
     const li = document.createElement('li');
     li.innerText = `${formatDate} ${inputName.value}: ${inputInsight.value}`;
     commentsList.appendChild(li);
     inputName.value = '';
     inputInsight.value = '';
+    number++;
+    commentNumber.innerHTML = `(${number})`;
   });
   form.appendChild(button);
 };
