@@ -6,8 +6,9 @@ import getNumberOfComments from './getNumberOfComments.js';
 
 const displayModal = async (id) => {
   const modal = id;
-  const { name, language, status, premiered, ended, rating, image, summary } =
-    await getSingleShow(modal);
+  const {
+    name, language, status, premiered, ended, rating, image, summary,
+  } = await getSingleShow(modal);
 
   const body = document.querySelector('body');
 
@@ -119,7 +120,7 @@ const displayModal = async (id) => {
     commentsList.appendChild(li);
     inputName.value = '';
     inputInsight.value = '';
-    number++;
+    number += 1;
     commentNumber.innerHTML = `(${number})`;
   });
   form.appendChild(button);
