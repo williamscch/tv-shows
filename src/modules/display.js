@@ -3,12 +3,13 @@ import thumbsUp from '../images/thumbsup.svg';
 import commentImg from '../images/comment.svg';
 import displayModal from './displayModal.js';
 import { getNumberOfLikes, addNewLike } from './likes.js';
+import showNumbers from './showNumber.js';
 
 const displayScreen = async () => {
-  const mostRatedShows = await getShows();
+  const showsArray = await getShows();
   const likesAr = await getNumberOfLikes();
   const list = document.querySelector('.shows');
-  mostRatedShows.forEach((show) => {
+  showsArray.forEach((show) => {
     const showCard = document.createElement('article');
     const img = document.createElement('img');
     img.src = show.image.medium;
@@ -36,6 +37,7 @@ const displayScreen = async () => {
       likeNum.textContent++;
     });
   });
+  showNumbers();
 };
 
 export default displayScreen;
