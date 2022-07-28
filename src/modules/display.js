@@ -23,6 +23,7 @@ const displayScreen = async () => {
     likeNum.textContent = likesAr.find((e) => e.item_id === show.id).likes;
     const like = document.createElement('img');
     like.src = thumbsUp;
+    like.classList.add('like');
     const commentBox = document.createElement('a');
     commentBox.innerHTML = 'Comments';
     commentBox.addEventListener('click', () => {
@@ -41,8 +42,8 @@ const displayScreen = async () => {
       likeNum.textContent = numberLikes;
     });
   });
-  const title = document.querySelector('.title h1');
-  title.innerHTML = 'Best Rated Shows';
+  const title = document.querySelector('.page-title');
+  title.innerHTML = 'Shows';
   const numberHTML = document.querySelector('.shows-number');
   const showsNum = showNumbers();
   numberHTML.textContent = showsNum;

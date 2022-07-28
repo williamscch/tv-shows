@@ -90,12 +90,20 @@ input[type="radio"]:checked + label {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  bottom: 0;
 }
 
 article {
   display: flex;
+  position: relative;
+
   flex-direction: column;
   margin-bottom: 2rem;
+}
+
+article h3 {
+  font-size: 1rem;
 }
 
 article > img {
@@ -210,4 +218,12 @@ h3 {
 .form button {
   width: fit-content;
   padding: 0.3rem;
+}
+
+.like {
+  transition: transform 3s;
+}
+
+.like:active {
+  transform: scale(10);
 }

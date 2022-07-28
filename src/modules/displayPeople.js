@@ -41,7 +41,9 @@ const displayPeople = async () => {
       likeNum.textContent = numberLikes;
     });
   });
-  const title = document.querySelector('.title h1');
+  const title = document.querySelector('.page-title');
+  const title1 = document.querySelector('.genre');
+  title1.textContent = '';
   title.innerHTML = 'People';
   const numberHTML = document.querySelector('.shows-number');
   const showsNum = showNumbers();
