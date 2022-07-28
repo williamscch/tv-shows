@@ -16,3 +16,12 @@ showsNav.addEventListener('click', displayScreen);
 
 const peopleNav = document.querySelector('.peoplenav');
 peopleNav.addEventListener('click', displayPeople);
+const form = document.querySelectorAll('input');
+
+form.forEach((element) => {
+  element.addEventListener('click', () => {
+    const shows = document.querySelector('.shows');
+    shows.innerHTML = null;
+    displayScreen();
+  });
+});

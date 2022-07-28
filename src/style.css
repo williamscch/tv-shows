@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 * {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -34,11 +34,28 @@ a {
   height: 50px;
 }
 
+fieldset {
+  display: flex;
+  justify-content: space-around;
+}
+
+.check-input {
+  transition: transform 2s;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  width: 100%;
+  background-color: #00a8e1;
+  border: 2px solid orange;
+}
+
 .title {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
+  justify-content: center;
 }
 
 .comments {
