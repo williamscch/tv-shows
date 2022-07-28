@@ -5,4 +5,3 @@ const getPeople = async () => {
 };
 
 export default getPeople;
-

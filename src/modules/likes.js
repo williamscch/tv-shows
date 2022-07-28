@@ -1,5 +1,4 @@
-const likesPath =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wTuKRCdWCi0TS2pluTow/likes';
+const likesPath = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wTuKRCdWCi0TS2pluTow/likes';
 
 const getNumberOfLikes = async () => {
   const response = await fetch(likesPath);
@@ -20,4 +19,3 @@ const addNewLike = async (id) => {
 };
 
 export { getNumberOfLikes, addNewLike };
-

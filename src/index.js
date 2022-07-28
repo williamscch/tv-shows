@@ -16,4 +16,3 @@ showsNav.addEventListener('click', displayScreen);
 
 const peopleNav = document.querySelector('.peoplenav');
 peopleNav.addEventListener('click', displayPeople);
-

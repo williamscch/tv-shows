@@ -49,4 +49,3 @@ const displayScreen = async () => {
 };
 
 export default displayScreen;
-

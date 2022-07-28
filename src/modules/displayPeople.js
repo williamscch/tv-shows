@@ -20,8 +20,7 @@ const displayPeople = async () => {
     const likeBox = document.createElement('div');
     likeBox.className = 'like-box';
     const likeNum = document.createElement('span');
-    likeNum.textContent =
-      likesArPeople.find((e) => e.item_id === person.id)?.likes ?? 0;
+    likeNum.textContent = likesArPeople.find((e) => e.item_id === person.id)?.likes ?? 0;
     const like = document.createElement('img');
     like.src = thumbsUp;
     // const commentBox = document.createElement('a');
@@ -50,4 +49,3 @@ const displayPeople = async () => {
 };
 
 export default displayPeople;
-
