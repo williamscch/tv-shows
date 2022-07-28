@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 * {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -48,10 +48,14 @@ fieldset {
   cursor: pointer;
 }
 
-input[type="radio"]:checked + label {
+input[type='radio']:checked + label {
   width: 100%;
   background-color: #00a8e1;
   border: 2px solid orange;
+}
+
+.dropdown-menu label {
+  cursor: pointer;
 }
 
 .title {
@@ -76,9 +80,10 @@ input[type="radio"]:checked + label {
   justify-content: space-between;
   gap: 2rem;
   font-size: 1.5rem;
+  margin: 0;
 }
 
-.nav-links li:hover {
+.nav-links > li:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -95,22 +100,29 @@ input[type="radio"]:checked + label {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  bottom: 0;
+  bottom: 25px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.3rem;
 }
 
 article {
   display: flex;
   position: relative;
   flex-direction: column;
-  margin-bottom: 2rem;
+  height: 295px;
+  margin-bottom: 1rem;
+}
+
+article a {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 article h3 {
   font-size: 1rem;
-}
-
-article > img {
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
 
 .like-box {
