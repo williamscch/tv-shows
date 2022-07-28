@@ -6,8 +6,9 @@ import getNumberOfComments from './getNumberOfComments.js';
 
 const displayModal = async (id) => {
   const modal = id;
-  const { name, language, status, premiered, ended, rating, image, summary } =
-    await getSingleShow(modal);
+  const {
+    name, language, status, premiered, ended, rating, image, summary,
+  } = await getSingleShow(modal);
 
   const body = document.querySelector('body');
 
@@ -74,23 +75,23 @@ const displayModal = async (id) => {
   const commentsList = document.createElement('ul');
   commentsList.className = 'comments';
 
-  if (comments === 'No comments') {
-    const paragraph = document.createElement('p');
-    paragraph.innerText = 'No comments';
-    paragraph.className = 'no-comments';
-    commentsList.appendChild(paragraph);
-  } else {
-    for (let i = 0; i < comments.length; i += 1) {
-      const li = document.createElement('li');
-      li.innerText = `${comments[i].creation_date} ${comments[i].username}: ${comments[i].comment}`;
-      commentsList.appendChild(li);
-    }
+  for (let i = 0; i < comments.length; i += 1) {
+    const li = document.createElement('li');
+    li.innerText = `${comments[i].creation_date} ${comments[i].username}: ${comments[i].comment}`;
+    commentsList.appendChild(li);
   }
 
   popup.appendChild(commentsList);
 
   let number = getNumberOfComments();
   commentNumber.innerHTML = `(${number})`;
+
+  if (number === 0) {
+    const paragraph = document.createElement('p');
+    paragraph.innerText = 'No comments yet.';
+    paragraph.className = 'no-comments';
+    commentsList.appendChild(paragraph);
+  }
 
   const form = document.createElement('div');
   form.className = 'form';
@@ -127,6 +128,7 @@ const displayModal = async (id) => {
     ).toLocaleString('en-US', { minimumIntegerDigits: 2 })}-${date
       .getDate()
       .toLocaleString('en-US', { minimumIntegerDigits: 2 })}`;
+
     const li = document.createElement('li');
     li.innerText = `${formatDate} ${inputName.value}: ${inputInsight.value}`;
     commentsList.appendChild(li);
@@ -139,4 +141,3 @@ const displayModal = async (id) => {
 };
 
 export default displayModal;
-
