@@ -9,3 +9,13 @@ imageLogo.src = tvLogo;
 navLogoContainer.appendChild(imageLogo);
 
 displayScreen();
+
+const form = document.querySelectorAll('input');
+
+form.forEach((element) => {
+  element.addEventListener('click', () => {
+    const shows = document.querySelector('.shows');
+    shows.innerHTML = null;
+    displayScreen();
+  });
+});

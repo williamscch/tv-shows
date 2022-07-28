@@ -34,11 +34,31 @@ a {
   height: 50px;
 }
 
+fieldset {
+  display: flex;
+  justify-content: space-around;
+}
+
+.check-input {
+  transition: transform 2s;
+}
+
+.check-input:hover {
+  cursor: pointer;
+  /* transform: scale(1.5) translate(0, 50px); */
+}
+
+input[type="radio"]:checked + label{
+  background-color: #00A8E1;
+  box-shadow: 0 0 0 3px orange;
+}
+
 .title {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
+  justify-content: center;
 }
 
 .comments {
