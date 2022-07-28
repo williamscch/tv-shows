@@ -1,40 +1,41 @@
-import getShows from './getShows.js';
+import getPeople from './getPeople.js';
+import { addNewLikePeople, getNumberOfLikesPeople } from './likesPeople.js';
 import thumbsUp from '../images/thumbsup.svg';
-import displayModal from './displayModal.js';
-import { getNumberOfLikes, addNewLike } from './likes.js';
 import showNumbers from './showNumber.js';
+import emptyProfile from '../images/empty-profile.jpg';
 
-const displayScreen = async () => {
-  const showsArray = await getShows();
-  const likesAr = await getNumberOfLikes();
+const displayPeople = async () => {
+  const peopleArray = await getPeople();
+  const likesArPeople = await getNumberOfLikesPeople();
   const list = document.querySelector('.shows');
   list.innerHTML = '';
-  showsArray.forEach((show) => {
-    const showCard = document.createElement('article');
+  peopleArray.forEach((person) => {
+    const personCard = document.createElement('article');
     const img = document.createElement('img');
-    img.src = show.image.medium;
+    img.src = person.image?.medium ?? emptyProfile;
     const titleAndLikes = document.createElement('div');
     titleAndLikes.className = 'title-likes';
     const name = document.createElement('h3');
-    name.textContent = show.name;
+    name.textContent = person.name;
     const likeBox = document.createElement('div');
     likeBox.className = 'like-box';
     const likeNum = document.createElement('span');
-    likeNum.textContent = likesAr.find((e) => e.item_id === show.id).likes;
+    likeNum.textContent =
+      likesArPeople.find((e) => e.item_id === person.id)?.likes ?? 0;
     const like = document.createElement('img');
     like.src = thumbsUp;
-    const commentBox = document.createElement('a');
-    commentBox.innerHTML = 'Comments';
-    commentBox.addEventListener('click', () => {
-      displayModal(show.id);
-    });
+    // const commentBox = document.createElement('a');
+    // commentBox.innerHTML = 'Comments';
+    // commentBox.addEventListener('click', () => {
+    //   displayModal(person.id);
+    // });
     titleAndLikes.append(name, likeBox);
     likeBox.append(likeNum, like);
-    showCard.append(img, titleAndLikes, commentBox);
-    list.append(showCard);
+    personCard.append(img, titleAndLikes);
+    list.append(personCard);
 
     like.addEventListener('click', () => {
-      addNewLike(show.id);
+      addNewLikePeople(person.id);
       let numberLikes = likeNum.textContent;
       numberLikes = parseInt(numberLikes, 10);
       numberLikes += 1;
@@ -42,11 +43,11 @@ const displayScreen = async () => {
     });
   });
   const title = document.querySelector('.title h1');
-  title.innerHTML = 'Best Rated Shows';
+  title.innerHTML = 'People';
   const numberHTML = document.querySelector('.shows-number');
   const showsNum = showNumbers();
   numberHTML.textContent = showsNum;
 };
 
-export default displayScreen;
+export default displayPeople;
 

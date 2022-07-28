@@ -78,6 +78,7 @@ a {
 article {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 article > img {
@@ -101,7 +102,6 @@ article a {
   text-align: center;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  margin-bottom: 2rem;
 }
 
 footer {
