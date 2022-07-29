@@ -15,7 +15,7 @@
 
 ## TV Shows Live Demo
 
-[Press here to see the TV Shows Live Demo](https://wdavidcch.github.io/capstone-project/dist/)
+[Press here to see the TV Shows Live Demo](https://wdavidcch.github.io/tv-shows/dist/)
 
 
 ## Getting Started

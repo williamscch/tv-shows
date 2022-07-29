@@ -86,6 +86,13 @@ const displayModal = async (id) => {
   let number = getNumberOfComments();
   commentNumber.innerHTML = `(${number})`;
 
+  if (number === 0) {
+    const paragraph = document.createElement('p');
+    paragraph.innerText = 'No comments yet.';
+    paragraph.className = 'no-comments';
+    commentsList.appendChild(paragraph);
+  }
+
   const form = document.createElement('div');
   form.className = 'form';
   popup.append(form);
@@ -109,12 +116,19 @@ const displayModal = async (id) => {
   button.innerHTML = 'Submit';
   button.addEventListener('click', () => {
     addComment(id, inputName.value, inputInsight.value);
+
+    const paragraph = document.querySelector('.no-comments');
+    if (paragraph !== null) {
+      paragraph.remove();
+    }
+
     const date = new Date();
     const formatDate = `${date.getFullYear()}-${(
       date.getMonth() + 1
     ).toLocaleString('en-US', { minimumIntegerDigits: 2 })}-${date
       .getDate()
       .toLocaleString('en-US', { minimumIntegerDigits: 2 })}`;
+
     const li = document.createElement('li');
     li.innerText = `${formatDate} ${inputName.value}: ${inputInsight.value}`;
     commentsList.appendChild(li);

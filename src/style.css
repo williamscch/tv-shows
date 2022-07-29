@@ -13,6 +13,10 @@ body {
   color: white;
 }
 
+h3 {
+  align-self: center;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -34,11 +38,32 @@ a {
   height: 50px;
 }
 
+fieldset {
+  display: flex;
+  justify-content: space-around;
+}
+
+.check-input {
+  transition: transform 2s;
+  cursor: pointer;
+}
+
+.dropdown-menu label {
+  cursor: pointer;
+}
+
+input[type='radio']:checked + label {
+  width: 100%;
+  background-color: #00a8e1;
+  border: 2px solid orange;
+}
+
 .title {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
+  justify-content: center;
 }
 
 .comments {
@@ -55,9 +80,10 @@ a {
   justify-content: space-between;
   gap: 2rem;
   font-size: 1.5rem;
+  margin: 0;
 }
 
-.nav-links li:hover {
+.nav-links > li:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -73,15 +99,39 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.3rem;
 }
 
 article {
   display: flex;
+  position: relative;
   flex-direction: column;
+  height: 295px;
+  margin-bottom: 1rem;
+  transition: transform 1s;
 }
 
-article > img {
-  margin-bottom: 0.5rem;
+article:hover {
+  transform: scale(1.1);
+}
+
+article a {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+article h3 {
+  font-size: 1rem;
+  margin: 0;
 }
 
 .like-box {
@@ -94,14 +144,6 @@ article > img {
   filter: invert();
   height: 20px;
   cursor: pointer;
-}
-
-article a {
-  width: 100%;
-  text-align: center;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  margin-bottom: 2rem;
 }
 
 footer {
@@ -166,10 +208,6 @@ h2 {
   margin-top: 1rem;
 }
 
-h3 {
-  align-self: center;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -193,4 +231,12 @@ h3 {
 .form button {
   width: fit-content;
   padding: 0.3rem;
+}
+
+.like {
+  transition: transform 3s;
+}
+
+.like:active {
+  transform: scale(10);
 }
