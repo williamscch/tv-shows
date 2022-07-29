@@ -112,6 +112,11 @@ article {
   flex-direction: column;
   height: 295px;
   margin-bottom: 1rem;
+  transition: transform 1s;
+}
+
+article:hover {
+  transform: scale(1.1);
 }
 
 article a {
