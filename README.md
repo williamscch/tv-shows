@@ -15,7 +15,7 @@
 
 ## TV Shows Live Demo
 
-[Press here to see the TV Shows Live Demo](https://wdavidcch.github.io/tv-shows/dist/)
+[Press here to see the TV Shows Live Demo](https://williamscch.github.io/tv-shows/dist/)
 
 
 ## Getting Started
@@ -26,7 +26,7 @@ To get a local copy up and running copy the SSH key of the repository and make a
 
 👤 **Williams Colmenares**
 
-- GitHub: [@wdavidcch](https://github.com/wdavidcch)
+- GitHub: [@williamscch](https://github.com/williamscch)
 - Twitter: [@wdavidcch](https://twitter.com/wdavidcch)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/williams-colmenares-989a6b151)
 
