@@ -17,6 +17,9 @@
 
 [Press here to see the TV Shows Live Demo](https://williamscch.github.io/tv-shows/dist/)
 
+## Quick view
+> ![](./app-ss.png)
+
 
 ## Getting Started
 
